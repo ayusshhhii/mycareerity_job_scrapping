@@ -1,0 +1,4 @@
+{
+  "using": "css selector",
+  "value": ".colDepartment.hidden-phone"
+}

@@ -1,0 +1,10 @@
+{
+  "script": "return (function scrollElementIntoView(element, addressBarShadowPadding) {\n    let currentPosition = 0;\n    const htmlNode = document.documentElement;\n    const bodyNode = document.body;\n    // Apply new global style\n    const styleTag = document.createElement('style');\n    styleTag.innerHTML = '* { scroll-behavior: unset !important; }';\n    document.head.appendChild(styleTag);\n    // Determine the current scroll position\n    if (htmlNode.scrollTop > 0) {\n        currentPosition = htmlNode.scrollTop;\n    }\n    else if (bodyNode.scrollTop > 0) {\n        currentPosition = bodyNode.scrollTop;\n    }\n    const { top } = element.getBoundingClientRect();\n    const yPosition = top - addressBarShadowPadding;\n    // Scroll to the position\n    if (htmlNode.scrollHeight > htmlNode.clientHeight) {\n        htmlNode.scrollTop = yPosition;\n    }\n    else if (bodyNode.scrollHeight > bodyNode.clientHeight) {\n        bodyNode.scrollTop = yPosition;\n    }\n    // Remove the injected style\n    document.head.removeChild(styleTag);\n    return currentPosition;\n}).apply(null, arguments)",
+  "args": [
+    {
+      "element-6066-11e4-a52e-4f735466cecf": "f.B5417807ADDB2ADCCF4C69BB196C1F7C.d.2CE29DF4CFE27E7CD4A43DBC5F6A9D7E.e.14",
+      "ELEMENT": "f.B5417807ADDB2ADCCF4C69BB196C1F7C.d.2CE29DF4CFE27E7CD4A43DBC5F6A9D7E.e.14"
+    },
+    6
+  ]
+}

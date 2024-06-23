@@ -1,0 +1,4 @@
+{
+  "using": "css selector",
+  "value": ".colLocation.hidden-phone"
+}

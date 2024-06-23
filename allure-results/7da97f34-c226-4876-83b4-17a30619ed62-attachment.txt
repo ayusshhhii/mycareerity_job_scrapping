@@ -1,0 +1,4 @@
+{
+  "script": "return (function waitForFonts() {\n    return new Promise((resolve, reject) => {\n        const timeoutPromise = new Promise((_, reject) => {\n            setTimeout(() => {\n                reject(new Error('Font loading timed out'));\n            }, 11000);\n        });\n        Promise.race([document.fonts.ready, timeoutPromise])\n            .then(() => {\n            resolve('All fonts have loaded');\n        })\n            .catch(reject);\n    });\n}).apply(null, arguments)",
+  "args": []
+}
